@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./todo-service.js"></script>
+  </head>
+  <body>
+    <article class="add-task">
+      <header>Create New Task</header>
+      <form>
+        <label>Task</label>
+        <input type="text" id="task" />
+        <label>Completion Date</label>
+        <input type="date" id="completionDate" />
+        <button type="button" onclick="addTask(event)">Add Task</button>
+      </form>
+    </article>
+    <article class="main">
+      <article class="card">
+        <header>In-progress Task</header>
+        <ul
+          class="listView in-progress"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></ul>
+      </article>
+      <article class="card">
+        <header>Completed Task</header>
+        <ul
+          class="listView completed"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></ul>
+      </article>
+    </article>
+  </body>
+</html>
